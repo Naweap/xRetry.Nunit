@@ -2,11 +2,11 @@ using TechTalk.SpecFlow.Generator.Plugins;
 using TechTalk.SpecFlow.Generator.UnitTestProvider;
 using TechTalk.SpecFlow.Infrastructure;
 using TechTalk.SpecFlow.UnitTestProvider;
-using xRetry.SpecFlow;
-using xRetry.SpecFlow.Parsers;
+using xRetry.SpecFlow.NUnit;
+using xRetry.SpecFlow.NUnit.Parsers;
 
 [assembly: GeneratorPlugin(typeof(GeneratorPlugin))]
-namespace xRetry.SpecFlow
+namespace xRetry.SpecFlow.NUnit
 {
     public class GeneratorPlugin : IGeneratorPlugin
     {

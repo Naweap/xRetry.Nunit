@@ -1,10 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace xRetry.SpecFlow.Parsers
+namespace xRetry.SpecFlow.NUnit.Parsers
 {
     public class RetryTag : IEquatable<RetryTag>
     {
