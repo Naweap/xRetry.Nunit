@@ -1,6 +1,6 @@
 using System;
 using NUnit.Framework;
-using xRetry.SpecFlow.NUnit.Parsers;
+using xRetry.NUnit.SpecFlowPlugin.Parsers;
 
 namespace Tests.SpecFlow.Parsers
 {

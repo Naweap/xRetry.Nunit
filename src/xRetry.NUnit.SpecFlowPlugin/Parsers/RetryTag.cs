@@ -1,6 +1,6 @@
 using System;
 
-namespace xRetry.SpecFlow.NUnit.Parsers
+namespace xRetry.NUnit.SpecFlowPlugin.Parsers
 {
     public class RetryTag : IEquatable<RetryTag>
     {

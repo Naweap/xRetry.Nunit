@@ -3,7 +3,7 @@ using TechTalk.SpecFlow.Generator;
 using TechTalk.SpecFlow.Generator.CodeDom;
 using TechTalk.SpecFlow.Generator.UnitTestProvider;
 
-namespace xRetry.SpecFlow.NUnit
+namespace xRetry.NUnit.SpecFlowPlugin
 {
     public class CustomNUnit3TestGeneratorProvider : CustomNUnitTestGeneratorProvider
     {

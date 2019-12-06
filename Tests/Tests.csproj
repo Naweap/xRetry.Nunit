@@ -123,9 +123,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\xRetry.SpecFlow\xRetry.SpecFlow.NUnit.csproj">
+    <ProjectReference Include="..\src\xRetry.NUnit.SpecFlowPlugin\xRetry.NUnit.SpecFlowPlugin.csproj">
       <Project>{20733607-C196-42E7-A257-09E15D5DAFCC}</Project>
-      <Name>xRetry.SpecFlow.NUnit</Name>
+      <Name>xRetry.NUnit.SpecFlowPlugin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

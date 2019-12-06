@@ -1,4 +1,4 @@
-namespace xRetry.SpecFlow.NUnit
+namespace xRetry.NUnit.SpecFlowPlugin
 {
     internal static class Constants
     {

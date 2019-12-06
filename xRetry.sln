@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -7,7 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E9E02E6-169
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3A384C09-1858-4BA9-9314-BC18A6234AE9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xRetry.SpecFlow.NUnit", "src\xRetry.SpecFlow\xRetry.SpecFlow.NUnit.csproj", "{20733607-C196-42E7-A257-09E15D5DAFCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xRetry.NUnit.SpecFlowPlugin", "src\xRetry.NUnit.SpecFlowPlugin\xRetry.NUnit.SpecFlowPlugin.csproj", "{20733607-C196-42E7-A257-09E15D5DAFCC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B70DB3C4-DA0F-47DF-B9F9-A6D1175E5C3D}"
 EndProject

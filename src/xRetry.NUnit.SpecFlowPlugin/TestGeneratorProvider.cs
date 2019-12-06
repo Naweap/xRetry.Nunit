@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow.Generator;
 using TechTalk.SpecFlow.Generator.CodeDom;
-using xRetry.SpecFlow.NUnit.Parsers;
+using xRetry.NUnit.SpecFlowPlugin.Parsers;
 
-namespace xRetry.SpecFlow.NUnit
+namespace xRetry.NUnit.SpecFlowPlugin
 {
     public class TestGeneratorProvider : CustomNUnit3TestGeneratorProvider
     {
