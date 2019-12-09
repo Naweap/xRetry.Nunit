@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>xRetry.NUnit.SpecFlowPlugin</id>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <authors>Josh Keegan, Beau Gosse</authors>
     <owners>Beau Gosse</owners>
     <projectUrl>https://github.com/beaubgosse/xRetry</projectUrl>
