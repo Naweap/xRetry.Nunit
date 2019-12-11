@@ -1,3 +1,4 @@
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,13 @@ using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Generator;
 using TechTalk.SpecFlow.Generator.CodeDom;
 using TechTalk.SpecFlow.Generator.UnitTestProvider;
+using xRetry.NUnit.SpecFlowPlugin.Parsers;
 
 namespace xRetry.NUnit.SpecFlowPlugin
 {
-    public class CustomNUnitTestGeneratorProvider : IUnitTestGeneratorProvider
+    public class NUnitTestGeneratorProviderWithRetry : IUnitTestGeneratorProvider
     {
+        private readonly IRetryTagParser _retryTagParser;
         protected const string TESTFIXTURE_ATTR = "NUnit.Framework.TestFixtureAttribute";
         protected const string TEST_ATTR = "NUnit.Framework.TestAttribute";
         protected const string ROW_ATTR = "NUnit.Framework.TestCaseAttribute";
@@ -33,9 +36,10 @@ namespace xRetry.NUnit.SpecFlowPlugin
 
         public bool GenerateParallelCodeForFeature { get; set; }
 
-        public CustomNUnitTestGeneratorProvider(CodeDomHelper codeDomHelper)
+        public NUnitTestGeneratorProviderWithRetry(CodeDomHelper codeDomHelper, IRetryTagParser retryTagParser)
         {
             CodeDomHelper = codeDomHelper;
+            _retryTagParser = retryTagParser;
         }
 
         public void SetTestClass(TestClassGenerationContext generationContext, string featureTitle, string featureDescription)
@@ -103,11 +107,29 @@ namespace xRetry.NUnit.SpecFlowPlugin
             CodeDomHelper.AddAttribute(testMethod, TEST_ATTR);
             CodeDomHelper.AddAttribute(testMethod, DESCRIPTION_ATTR, friendlyTestName);
         }
-
+        
         public virtual void SetTestMethodCategories(TestClassGenerationContext generationContext, CodeMemberMethod testMethod, IEnumerable<string> scenarioCategories)
         {
+            // Prevent multiple enumerations
+            scenarioCategories = scenarioCategories.ToList();
+
             CodeDomHelper.AddAttributeForEachValue(testMethod, CATEGORY_ATTR, scenarioCategories);
+            
+            string strRetryTag = getRetryTag(scenarioCategories);
+            if (strRetryTag != null)
+            {
+                RetryTag retryTag = _retryTagParser.Parse(strRetryTag);
+
+                // Add the Retry attribute
+                CodeDomHelper.AddAttribute(testMethod, "NUnit.Framework.RetryAttribute", retryTag?.MaxRetries ?? 3);
+            }
         }
+
+        private string getRetryTag(IEnumerable<string> tags) =>
+            tags.FirstOrDefault(t =>
+                t.StartsWith(Constants.RETRY_TAG, StringComparison.OrdinalIgnoreCase) &&
+                // Is just "retry", or is "retry("... for params
+                (t.Length == Constants.RETRY_TAG.Length || t[Constants.RETRY_TAG.Length] == '('));
 
         public virtual void SetTestMethodIgnore(TestClassGenerationContext generationContext, CodeMemberMethod testMethod)
         {

@@ -19,7 +19,7 @@ namespace xRetry.NUnit.SpecFlowPlugin
         private void customiseDependencies(object sender, CustomizeDependenciesEventArgs eventArgs)
         {
             eventArgs.ObjectContainer.RegisterTypeAs<RetryTagParser, IRetryTagParser>();
-            eventArgs.ObjectContainer.RegisterTypeAs<TestGeneratorProvider, IUnitTestGeneratorProvider>();
+            eventArgs.ObjectContainer.RegisterTypeAs<NUnit3TestGeneratorProviderWithRetryWithRetry, IUnitTestGeneratorProvider>();
         }
     }
 }

@@ -2,16 +2,17 @@ using System.CodeDom;
 using TechTalk.SpecFlow.Generator;
 using TechTalk.SpecFlow.Generator.CodeDom;
 using TechTalk.SpecFlow.Generator.UnitTestProvider;
+using xRetry.NUnit.SpecFlowPlugin.Parsers;
 
 namespace xRetry.NUnit.SpecFlowPlugin
 {
-    public class CustomNUnit3TestGeneratorProvider : CustomNUnitTestGeneratorProvider
+    public class NUnit3TestGeneratorProviderWithRetryWithRetry : NUnitTestGeneratorProviderWithRetry
     {
         protected const string TESTFIXTURESETUP_ATTR_NUNIT3 = "NUnit.Framework.OneTimeSetUpAttribute";
         protected const string TESTFIXTURETEARDOWN_ATTR_NUNIT3 = "NUnit.Framework.OneTimeTearDownAttribute";
         protected const string PARALLELIZABLE_ATTR = "NUnit.Framework.ParallelizableAttribute";
 
-        public CustomNUnit3TestGeneratorProvider(CodeDomHelper codeDomHelper) : base(codeDomHelper)
+        public NUnit3TestGeneratorProviderWithRetryWithRetry(CodeDomHelper codeDomHelper, IRetryTagParser retryTagParser) : base(codeDomHelper, retryTagParser)
         {
         }
 
