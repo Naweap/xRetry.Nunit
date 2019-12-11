@@ -29,12 +29,6 @@ Scenario: Retry three times by default
 This will retry the test up to 3 times by default. You can optionally specify a number of times 
 to retry the test in brackets, e.g. `@retry(5)`.  
 
-You can also optionally specify a delay between each retry (in milliseconds) as a second 
-parameter, e.g. `@retry(5,100)` will run your test 5 times until it passes, waiting 100ms
-between each attempt.  
-Note that you must not include a space between the parameters, as Cucumber/SpecFlow uses
-a space to separate tags, i.e. `@retry(5, 100)` would not work due to the space after the comma.
-
 ## Contributing
 Feel free to open a pull request! If you want to start any sizeable chunk of work, consider 
 opening an issue first to discuss, and make sure nobody else is working on the same problem.  
