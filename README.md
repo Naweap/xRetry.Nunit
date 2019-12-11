@@ -17,7 +17,9 @@ If you have a test that covers some flaky code, where sporadic failures are caus
 this library should **not** be used to cover it up!
 
 ## Usage: SpecFlow 3
-Add the `xRetry.NUnit.SpecFlowPlugin` nuget package to your project.  
+Add the `xRetry.NUnit.SpecFlowPlugin` nuget package to your project.
+
+nuget.org link: https://www.nuget.org/packages/xRetry.NUnit.SpecFlowPlugin/
 
 Above any scenario that should be retried, add a `@retry` tag, e.g:
 ```gherkin
