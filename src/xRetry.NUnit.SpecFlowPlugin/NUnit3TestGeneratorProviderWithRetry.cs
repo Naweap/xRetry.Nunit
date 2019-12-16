@@ -6,13 +6,13 @@ using xRetry.NUnit.SpecFlowPlugin.Parsers;
 
 namespace xRetry.NUnit.SpecFlowPlugin
 {
-    public class NUnit3TestGeneratorProviderWithRetryWithRetry : NUnitTestGeneratorProviderWithRetry
+    public class NUnit3TestGeneratorProviderWithRetry : NUnitTestGeneratorProviderWithRetry
     {
         protected const string TESTFIXTURESETUP_ATTR_NUNIT3 = "NUnit.Framework.OneTimeSetUpAttribute";
         protected const string TESTFIXTURETEARDOWN_ATTR_NUNIT3 = "NUnit.Framework.OneTimeTearDownAttribute";
         protected const string PARALLELIZABLE_ATTR = "NUnit.Framework.ParallelizableAttribute";
 
-        public NUnit3TestGeneratorProviderWithRetryWithRetry(CodeDomHelper codeDomHelper, IRetryTagParser retryTagParser) : base(codeDomHelper, retryTagParser)
+        public NUnit3TestGeneratorProviderWithRetry(CodeDomHelper codeDomHelper, IRetryTagParser retryTagParser) : base(codeDomHelper, retryTagParser)
         {
         }
 
