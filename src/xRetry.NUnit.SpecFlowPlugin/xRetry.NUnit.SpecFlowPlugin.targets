@@ -3,6 +3,6 @@
     <_xRetryGeneratorPluginFramework Condition=" '$(MSBuildRuntimeType)' == 'Core'">netstandard2.0</_xRetryGeneratorPluginFramework>
     <_xRetryGeneratorPluginFramework Condition=" '$(MSBuildRuntimeType)' != 'Core'">net471</_xRetryGeneratorPluginFramework>
 
-    <_xRetryGeneratorPluginPath>$(MSBuildThisFileDirectory)\$(_xRetryGeneratorPluginFramework)\xRetry.SpecFlowPlugin.dll</_xRetryGeneratorPluginPath>
+    <_xRetryGeneratorPluginPath>$(MSBuildThisFileDirectory)\$(_xRetryGeneratorPluginFramework)\xRetry.NUnit.SpecFlowPlugin.dll</_xRetryGeneratorPluginPath>
   </PropertyGroup>
 </Project>

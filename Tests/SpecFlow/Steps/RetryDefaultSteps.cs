@@ -1,23 +1,23 @@
+using NUnit.Framework;
 using TechTalk.SpecFlow;
-using Xunit;
 
-namespace UnitTests.SpecFlow.Steps
+namespace Tests.SpecFlow.Steps
 {
     [Binding]
     public class RetryDefaultSteps
     {
-        private static int retryCount = 0;
+        private static int _retryCount = 0;
 
         [When(@"I increment the default retry count")]
         public void WhenIIncrementTheDefaultRetryCount()
         {
-            retryCount++;
+            _retryCount++;
         }
 
         [Then(@"the default result should be (.*)")]
         public void ThenTheDefaultResultShouldBe(int expected)
         {
-            Assert.Equal(expected, retryCount);
+            Assert.AreEqual(expected, _retryCount);
         }
     }
 }

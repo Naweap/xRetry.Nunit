@@ -1,31 +1,28 @@
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
-using Xunit;
 
-namespace UnitTests.SpecFlow.Steps
+namespace Tests.SpecFlow.Steps
 {
     [Binding]
     public class RetryDelaySteps
     {
-        private static Stopwatch sw = null;
+        private static Stopwatch _stopwatch;
 
         [When(@"I start the stopwatch if not already started")]
         public void WhenIStartTheStopwatchIfNotAlreadyStarted()
         {
-            if (sw == null)
+            if (_stopwatch == null)
             {
-                sw = new Stopwatch();
-                sw.Start();
+                _stopwatch = new Stopwatch();
+                _stopwatch.Start();
             }
         }
 
         [Then(@"the stopwatch elapsed milliseconds is greater than or equal to '(.*)'")]
         public void ThenTheStopwatchElapsedMillisecondsIsGreaterThan(int minElapsedMs)
         {
-            Assert.True(sw.ElapsedMilliseconds >= minElapsedMs);
+            Assert.True(_stopwatch.ElapsedMilliseconds >= minElapsedMs);
         }
 
     }

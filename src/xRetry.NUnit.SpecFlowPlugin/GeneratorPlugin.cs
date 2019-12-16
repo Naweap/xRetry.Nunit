@@ -2,11 +2,11 @@ using TechTalk.SpecFlow.Generator.Plugins;
 using TechTalk.SpecFlow.Generator.UnitTestProvider;
 using TechTalk.SpecFlow.Infrastructure;
 using TechTalk.SpecFlow.UnitTestProvider;
-using xRetry.SpecFlow;
-using xRetry.SpecFlow.Parsers;
+using xRetry.NUnit.SpecFlowPlugin;
+using xRetry.NUnit.SpecFlowPlugin.Parsers;
 
 [assembly: GeneratorPlugin(typeof(GeneratorPlugin))]
-namespace xRetry.SpecFlow
+namespace xRetry.NUnit.SpecFlowPlugin
 {
     public class GeneratorPlugin : IGeneratorPlugin
     {
@@ -19,7 +19,7 @@ namespace xRetry.SpecFlow
         private void customiseDependencies(object sender, CustomizeDependenciesEventArgs eventArgs)
         {
             eventArgs.ObjectContainer.RegisterTypeAs<RetryTagParser, IRetryTagParser>();
-            eventArgs.ObjectContainer.RegisterTypeAs<TestGeneratorProvider, IUnitTestGeneratorProvider>();
+            eventArgs.ObjectContainer.RegisterTypeAs<NUnit3TestGeneratorProviderWithRetry, IUnitTestGeneratorProvider>();
         }
     }
 }
