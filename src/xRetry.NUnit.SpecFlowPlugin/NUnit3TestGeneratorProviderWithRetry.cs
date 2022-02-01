@@ -40,10 +40,5 @@ namespace xRetry.NUnit.SpecFlowPlugin
         {
             CodeDomHelper.AddAttribute(generationContext.TestClassCleanupMethod, TESTFIXTURETEARDOWN_ATTR_NUNIT3);
         }
-
-        public override void SetTestClassParallelize(TestClassGenerationContext generationContext)
-        {
-            CodeDomHelper.AddAttribute(generationContext.TestClass, PARALLELIZABLE_ATTR, new CodeAttributeArgument(new CodePrimitiveExpression(generationContext.TestClass.Name)));
-        }
     }
 }

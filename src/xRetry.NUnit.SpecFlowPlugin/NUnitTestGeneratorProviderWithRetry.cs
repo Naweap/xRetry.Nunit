@@ -74,11 +74,6 @@ namespace xRetry.NUnit.SpecFlowPlugin
                     new CodeVariableReferenceExpression(TESTCONTEXT_INSTANCE)));
         }
 
-        public virtual void SetTestClassParallelize(TestClassGenerationContext generationContext)
-        {
-            // not supported
-        }
-
 
         public virtual void SetTestClassInitializeMethod(TestClassGenerationContext generationContext)
         {
@@ -171,6 +166,11 @@ namespace xRetry.NUnit.SpecFlowPlugin
         public void SetTestMethodAsRow(TestClassGenerationContext generationContext, CodeMemberMethod testMethod, string scenarioTitle, string exampleSetName, string variantName, IEnumerable<KeyValuePair<string, string>> arguments)
         {
             // doing nothing since we support RowTest
+        }
+
+        public void SetTestClassNonParallelizable(TestClassGenerationContext generationContext)
+        {
+            // not supported
         }
     }
 }
